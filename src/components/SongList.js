@@ -1,12 +1,14 @@
 import React from 'react';
 import Filter from './Filter';
 import SongItem from './SongItem'
-
+// import handleClick from './App'
 
 
 
 const SongList = props => {
     // console.log(props);
+
+
     
     return (
         <div className="half songlist">
@@ -24,17 +26,18 @@ const SongList = props => {
                         </tr>
                     </thead>
                     <tbody>
-                        {props.songs.map((song,index) => (
+                        {props.songs.map(song => (
                             <SongItem 
-                                key={index}
+                                handleUpdateFav={props.handleUpdateFav}
+                                key={song.id}
+                                id={song.id}
                                 title={song.title}
                                 artist={song.artist}
-                                url={song.url}
-                                genre={song.genre}
+                                // url={song.url}
+                                // genre={song.genre}
                                 favorite={song.favorite}
                             />
-                            )   
-                        )
+                            ))
                         }
                     </tbody>
             </table>

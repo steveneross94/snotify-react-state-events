@@ -7,7 +7,7 @@ const MainContainer = props => {
     
     return (
         <div className="simple-flex-row top">
-            <SongList songs={props.songs}/> 
+            <SongList songs={props.songs} handleUpdateFav={props.handleUpdateFav}/> 
             <Queue /> {/** TODO: What props do I need? */}
         </div>
     )
